@@ -28,31 +28,6 @@ https://music.126413.xyz/ikun/latest.js
 https://music.126413.xyz/grass/latest.js
 ```
 
-## 在线导入 - 加速链接
-
-### SixYin
-```
-https://ghproxy.net/music.126413.xyz/sixyin/latest.js
-```
-### Huibq
-```
-https://ghproxy.net/music.126413.xyz/huibq/latest.js
-```
-### Flower
-```
-https://ghproxy.net/music.126413.xyz/flower/latest.js
-```
-### LX
-```
-https://ghproxy.net/music.126413.xyz/lx/latest.js
-```
-### ikun
-```
-https://ghproxy.net/music.126413.xyz/ikun/latest.js
-```
-### Grass
-```
-https://ghproxy.net/music.126413.xyz/grass/latest.js
 ```
 
 ### 其他加速站点
