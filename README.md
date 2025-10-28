@@ -28,7 +28,6 @@ https://music.126413.xyz/ikun/latest.js
 https://music.126413.xyz/grass/latest.js
 ```
 
-```
 
 ### 其他加速站点
 
