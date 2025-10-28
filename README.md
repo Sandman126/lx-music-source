@@ -5,7 +5,7 @@
 
 ### SixYin
 ```
-https:///sixyin/latest.js
+https://sixyin/latest.js
 ```
 ### Huibq
 ```
