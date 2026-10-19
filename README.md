@@ -33,6 +33,38 @@ https://music.126413.xyz/grass/latest.js
 https://music.126413.xyz/juhe/latest.js
 ```
 
+### Guoyue 优质源
+
+| 名称 | 链接 |
+|------|------|
+| 墨澜聚合音源 v2.3.4 | https://music.126413.xyz/guoyue/molan-2.3.4.js |
+| 裤佬SVIP音源 v3.0.0 | https://music.126413.xyz/guoyue/kulao-3.0.0.js |
+| 安妮独家音源 v5 | https://music.126413.xyz/guoyue/anni-5.js |
+| 回避聚合 v0.0.1 | https://music.126413.xyz/guoyue/huibi-0.0.1.js |
+| HYWmusic 公益版 v1.2.0 | https://music.126413.xyz/guoyue/hywmusic-1.2.0.js |
+| HelloWorld 音源 | https://music.126413.xyz/guoyue/helloworld-260925.js |
+
+### Guoyue 一般源
+
+| 名称 | 链接 |
+|------|------|
+| 星海音乐源 v3.2.15 | https://music.126413.xyz/guoyue/xinghai-3.2.15.js |
+| 星澜聚合音源 v4.0.0 | https://music.126413.xyz/guoyue/stellarwave-4.0.0.js |
+| 玉宁熙 Pro v1.2.5 | https://music.126413.xyz/guoyue/yuningxi-1.2.5.js |
+| 西瓜聚合源 v1.40 | https://music.126413.xyz/guoyue/xigua-1.40.js |
+| 全豆要聚合音源 v4.1 | https://music.126413.xyz/guoyue/quandouyao-4.1.js |
+| fish_music v1.9.0 | https://music.126413.xyz/guoyue/fish-music-1.9.0.js |
+| 屿溪-终章 | https://music.126413.xyz/guoyue/yuxi-0.0.0.js |
+| 幻音音源 v3 | https://music.126413.xyz/guoyue/huanyin-3.js |
+| 念心音源 v1.0.2 | https://music.126413.xyz/guoyue/nianxin-1.0.2.js |
+| 溯音音源 v1 | https://music.126413.xyz/guoyue/suyin-1.js |
+| 稳定版音源 v1.0.3 | https://music.126413.xyz/guoyue/stable-1.0.3.js |
+| 统一音乐源 v1.0.0 | https://music.126413.xyz/guoyue/unified-1.0.0.js |
+| 收集の聚合接口 | https://music.126413.xyz/guoyue/shouji-aggregate-1.0.0-beta.js |
+| 聚合API接口 (CF) v3 | https://music.126413.xyz/guoyue/api-cf-3.js |
+| 非常刀 v5 | https://music.126413.xyz/guoyue/feichangdao-5.js |
+| gdstudio 音乐源 v1.0.1 | https://music.126413.xyz/guoyue/gdstudio-1.0.1.js |
+
 
 ### 其他加速站点
 
@@ -51,6 +83,7 @@ https://music.126413.xyz/juhe/latest.js
 - [Huibq/keep-alive](https://github.com/Huibq/keep-alive/)
 - [LX](https://www.lxmusic.cc/)
 - [ikun](https://github.com/lxmusics/lx-music-api-server)
+- [guoyue2010/lxmusic-](https://github.com/guoyue2010/lxmusic-/releases) V261017
 
 ## 项目地址
 - [lx-music-desktop](https://github.com/lyswhut/lx-music-desktop)
