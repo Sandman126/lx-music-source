@@ -188,6 +188,9 @@
       toggle.type = "button";
       document.body.appendChild(toggle);
 
+      // 按钮创建后同步一次图标（apply 在按钮存在前已调用过）
+      apply(root.getAttribute("data-theme"));
+
       toggle.addEventListener("click", function () {
         var next =
           root.getAttribute("data-theme") === "dark" ? "light" : "dark";
