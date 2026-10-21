@@ -1,0 +1,230 @@
+<!-- 暗色模式：跟随系统自动切换 + 手动按钮覆盖，选择记入 localStorage -->
+<style>
+  /* 暗色配色（对齐 GitHub Dark 主题色值） */
+  :root {
+    --lx-bg: #0d1117;
+    --lx-bg-subtle: #161b22;
+    --lx-bg-inset: #010409;
+    --lx-fg: #e6edf3;
+    --lx-fg-muted: #8b949e;
+    --lx-border: #30363d;
+    --lx-link: #4493f8;
+    --lx-code-bg: #161b22;
+    --lx-shadow: rgba(1, 4, 9, 0.5);
+  }
+
+  html[data-theme="dark"] {
+    color-scheme: dark;
+  }
+
+  html[data-theme="dark"] body {
+    background-color: var(--lx-bg);
+    color: var(--lx-fg);
+  }
+
+  html[data-theme="dark"] .markdown-body {
+    color: var(--lx-fg);
+  }
+
+  /* 标题 */
+  html[data-theme="dark"] .markdown-body h1,
+  html[data-theme="dark"] .markdown-body h2,
+  html[data-theme="dark"] .markdown-body h3,
+  html[data-theme="dark"] .markdown-body h4,
+  html[data-theme="dark"] .markdown-body h5,
+  html[data-theme="dark"] .markdown-body h6 {
+    color: var(--lx-fg);
+  }
+
+  /* 链接 */
+  html[data-theme="dark"] .markdown-body a {
+    color: var(--lx-link);
+    text-decoration: none;
+  }
+
+  html[data-theme="dark"] .markdown-body a:hover {
+    text-decoration: underline;
+  }
+
+  /* 表格 */
+  html[data-theme="dark"] .markdown-body table th,
+  html[data-theme="dark"] .markdown-body table td {
+    border-color: var(--lx-border);
+    color: var(--lx-fg);
+  }
+
+  html[data-theme="dark"] .markdown-body table tr {
+    background-color: var(--lx-bg);
+    border-color: var(--lx-border);
+  }
+
+  html[data-theme="dark"] .markdown-body table tr:nth-child(2n) {
+    background-color: var(--lx-bg-subtle);
+  }
+
+  html[data-theme="dark"] .markdown-body table th {
+    background-color: var(--lx-bg-subtle);
+  }
+
+  /* 分隔线 */
+  html[data-theme="dark"] .markdown-body hr,
+  html[data-theme="dark"] .markdown-body .rule {
+    border-color: var(--lx-border);
+    background-color: var(--lx-border);
+    color: var(--lx-border);
+  }
+
+  /* 代码块 */
+  html[data-theme="dark"] .markdown-body code,
+  html[data-theme="dark"] .markdown-body pre,
+  html[data-theme="dark"] .markdown-body .highlight,
+  html[data-theme="dark"] .markdown-body .highlight pre {
+    background-color: var(--lx-code-bg);
+    color: var(--lx-fg);
+  }
+
+  html[data-theme="dark"] .markdown-body pre {
+    border-color: var(--lx-border);
+  }
+
+  /* 引用块 */
+  html[data-theme="dark"] .markdown-body blockquote {
+    color: var(--lx-fg-muted);
+    border-left-color: var(--lx-border);
+  }
+
+  /* 折叠面板 */
+  html[data-theme="dark"] .markdown-body details {
+    border-color: var(--lx-border);
+  }
+
+  html[data-theme="dark"] .markdown-body summary {
+    color: var(--lx-fg);
+  }
+
+  /* 列表标记 */
+  html[data-theme="dark"] .markdown-body li::marker {
+    color: var(--lx-fg-muted);
+  }
+
+  /* 切换按钮 */
+  #lx-theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 9999;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--lx-border, #d0d7de);
+    border-radius: 50%;
+    background: var(--lx-bg-subtle, #f6f8fa);
+    color: var(--lx-fg, #24292e);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px var(--lx-shadow, rgba(0, 0, 0, 0.12));
+    transition: transform 0.15s ease, background-color 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  #lx-theme-toggle:hover {
+    transform: scale(1.08);
+  }
+
+  #lx-theme-toggle:focus-visible {
+    outline: 2px solid var(--lx-link, #0969da);
+    outline-offset: 2px;
+  }
+</style>
+
+<script>
+  (function () {
+    var STORAGE_KEY = "lx-theme";
+    var root = document.documentElement;
+    var toggle = null;
+
+    function systemPrefersDark() {
+      return (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      );
+    }
+
+    function apply(theme) {
+      root.setAttribute("data-theme", theme);
+      if (toggle) {
+        toggle.textContent = theme === "dark" ? "☀" : "☾";
+        toggle.setAttribute(
+          "aria-label",
+          theme === "dark" ? "切换到亮色模式" : "切换到暗色模式"
+        );
+        toggle.setAttribute("title", theme === "dark" ? "亮色模式" : "暗色模式");
+      }
+    }
+
+    function currentTheme() {
+      var saved = null;
+      try {
+        saved = localStorage.getItem(STORAGE_KEY);
+      } catch (e) {
+        /* 隐私模式下 localStorage 不可用，忽略 */
+      }
+      if (saved === "dark" || saved === "light") {
+        return saved;
+      }
+      return systemPrefersDark() ? "dark" : "light";
+    }
+
+    function init() {
+      // 先按当前主题设好，避免刷新时闪白
+      apply(currentTheme());
+
+      toggle = document.createElement("button");
+      toggle.id = "lx-theme-toggle";
+      toggle.type = "button";
+      document.body.appendChild(toggle);
+
+      toggle.addEventListener("click", function () {
+        var next =
+          root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        apply(next);
+        try {
+          localStorage.setItem(STORAGE_KEY, next);
+        } catch (e) {
+          /* 忽略存储失败 */
+        }
+      });
+
+      // 用户未手动选择过时，跟随系统变化
+      if (window.matchMedia) {
+        var mq = window.matchMedia("(prefers-color-scheme: dark)");
+        var onChange = function () {
+          var saved = null;
+          try {
+            saved = localStorage.getItem(STORAGE_KEY);
+          } catch (e) {
+            /* 忽略 */
+          }
+          if (!saved) {
+            apply(mq.matches ? "dark" : "light");
+          }
+        };
+        if (mq.addEventListener) {
+          mq.addEventListener("change", onChange);
+        } else if (mq.addListener) {
+          mq.addListener(onChange);
+        }
+      }
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+  })();
+</script>
