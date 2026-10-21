@@ -23,6 +23,7 @@
 | 非常刀 v5 | [feichangdao-5.js](https://music.126413.xyz/guoyue/feichangdao-5.js) |
 | fish_music v1.9.0 | [fish-music-1.9.0.js](https://music.126413.xyz/guoyue/fish-music-1.9.0.js) |
 | gdstudio 音乐源 v1.0.1 | [gdstudio-1.0.1.js](https://music.126413.xyz/guoyue/gdstudio-1.0.1.js) |
+| Hei Music聚合源 v2.2.1-fix | [heimusic-2.2.1-fix.js](https://music.126413.xyz/guoyue/heimusic-2.2.1-fix.js) |
 | 幻音音源 v3 | [huanyin-3.js](https://music.126413.xyz/guoyue/huanyin-3.js) |
 | 念心音源 v1.0.2 | [nianxin-1.0.2.js](https://music.126413.xyz/guoyue/nianxin-1.0.2.js) |
 | 全豆要聚合音源 v4.1 | [quandouyao-4.1.js](https://music.126413.xyz/guoyue/quandouyao-4.1.js) |
