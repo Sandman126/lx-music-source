@@ -11,7 +11,6 @@
 | 安妮独家音源 v5 | [anni-5.js](https://music.126413.xyz/guoyue/anni-5.js) |
 | HelloWorld 音源 | [helloworld-260925.js](https://music.126413.xyz/guoyue/helloworld-260925.js) |
 | 回避聚合 v0.0.1 | [huibi-0.0.1.js](https://music.126413.xyz/guoyue/huibi-0.0.1.js) |
-| HYWmusic 公益版 v1.2.0 | [hywmusic-1.2.0.js](https://music.126413.xyz/guoyue/hywmusic-1.2.0.js) |
 | 裤佬SVIP音源 v3.0.0 | [kulao-3.0.0.js](https://music.126413.xyz/guoyue/kulao-3.0.0.js) |
 
 ### 一般源
